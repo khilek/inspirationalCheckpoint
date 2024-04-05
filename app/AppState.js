@@ -1,4 +1,6 @@
 import { Images } from "./models/Images.js"
+import { Quotes } from "./models/Quotes.js"
+import { Weather } from "./models/Weather.js"
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
 
@@ -13,8 +15,11 @@ class ObservableAppState extends EventEmitter {
   activeImage = null
 
 
+  /**@type {Quotes} */
+  activeQuote = null
 
-
+  /**@type {Weather} */
+  activeWeather = null
 
 
 }

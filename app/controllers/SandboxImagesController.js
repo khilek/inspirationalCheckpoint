@@ -29,7 +29,7 @@ export class SandboxImagesController {
 
   drawImages() {
     const activeImage = AppState.activeImage
-    setHTML('active-images', activeImage.ActiveImgTemplate)
+    setHTML('active-images', activeImage.query)
     document.body.style.backgroundImage = `url(${activeImage.url})`
   }
 

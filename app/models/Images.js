@@ -8,20 +8,20 @@ export class Images {
     this.query = data.query
     this.author = data.author
     this.largeImgUrl = this.largeImgUrl
-
+    this.tags = data.tags
   }
 
-  get ActiveImgTemplate() {
-    return `
+  // get ActiveImgTemplate() {
+  //   return `
 
 
+  //   `
 
 
-`
-  }
-
-
+  // }
 }
+
+
 
 
 // {
