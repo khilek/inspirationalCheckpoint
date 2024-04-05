@@ -5,6 +5,9 @@ export class Weather {
     this.name = data.name
     this.main = data.main.temp
     this.weather = data.weather
+    this.kelvin = data.main.temp
+    this.celsius = data.main.temp - 273.15
+    this.fahrenheit = (data.main.temp - 273.15) * 9 / 5 + 32
   }
 
 }

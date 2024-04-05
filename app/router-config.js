@@ -1,4 +1,5 @@
 import { AccountController } from "./controllers/AccountController.js";
+import { ClockController } from "./controllers/ClockController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { SandboxImagesController } from "./controllers/SandboxImagesController.js";
 import { SandboxQuotesController } from "./controllers/SandboxQuotesController.js";
@@ -10,7 +11,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [SandboxImagesController, SandboxQuotesController, SandboxWeatherController],
+    controllers: [SandboxImagesController, SandboxQuotesController, SandboxWeatherController, ClockController],
     view: 'app/views/ApplicationView.html'
   },
   {

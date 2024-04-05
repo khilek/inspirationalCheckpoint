@@ -30,8 +30,11 @@ export class SandboxWeatherController {
 
   drawWeather() {
     const activeWeather = AppState.activeWeather
-    setHTML('active-weather', activeWeather.main)
+    setHTML('active-weather', activeWeather.fahrenheit.toFixed(2))
   }
+
+
+
 
 
 }
