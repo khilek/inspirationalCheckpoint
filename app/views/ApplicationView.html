@@ -11,12 +11,25 @@
   <div class="d-flex">
     <div class="col-4" id="active-weather">Weather</div>
     <div class="col-4" id="clock">Time</div>
-    <div class="col-4">To Do</div>
-  </div>
+    <div class="col-4" id="todos">ToDo</div>
 </section>
+<div class="card text-center">
+  <form onsubmit="app.SandboxToDoController.createToDo()">
+    <form class="mb-3 d-flex justify-content-around">
+      <label for="name">Create New ToDo</label>
+      <input type="text" name="description" id="description" required minlength="3" maxlength="150">
+      <button type="submit">Create</button>
+
+    </form>
+  </form>
+</div>
+
+</div>
 
 
-<section id="active-quotes" class="container">
+
+
+<section id="active-quotes" class="container text-light text-center">
 
 
 </section>
