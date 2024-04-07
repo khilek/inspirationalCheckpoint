@@ -31,7 +31,7 @@ export class SandboxToDoController {
 
   async deleteToDos(toDoId) {
     try {
-      const result = await Pop.confirm('Are  you sure you want to destroy forever???', 'You cannot get back', 'DO IT!')
+      const result = await Pop.confirm('Are  you sure you want to destroy forever???', 'You cannot get ToDo back', 'DO IT!')
 
       if (result == false) return
 
