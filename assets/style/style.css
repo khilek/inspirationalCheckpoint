@@ -15,3 +15,7 @@ body {
   background-size: cover;
   background-position: center;
 }
+
+.line-through {
+  text-decoration: line-through;
+}

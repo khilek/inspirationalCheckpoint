@@ -28,7 +28,8 @@ export class ToDos {
 
   get ToDoListTemplate() {
     return `
-  <div class="col-4 selectable">${this.description}
+    
+     <div class="col-4 selectable ${this.completed ? 'line-through' : ''}"><input type="checkbox" onchange="app.SandboxToDoController.toggleLineThrough('${this.id}')" > ${this.description}
     <button onclick="app.SandboxToDoController.deleteToDos('${this.id}')">Delete</button>
   </div>
   `

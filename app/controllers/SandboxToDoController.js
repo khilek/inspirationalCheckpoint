@@ -44,6 +44,12 @@ export class SandboxToDoController {
 
 
 
+  async toggleLineThrough(toDoId) {
+    const doneToDo = AppState.myToDos.find(toDos => toDos.id == toDoId)
+    doneToDo.completed = !doneToDo.completed
+    await sandboxToDoService.updateMyToDos(doneToDo)
+  }
+
 
   drawToDos() {
     const toDos = AppState.myToDos

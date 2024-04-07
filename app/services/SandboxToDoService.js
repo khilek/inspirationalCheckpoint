@@ -31,6 +31,20 @@ class SandboxToDoService {
     AppState.myToDos.splice(indexToRemove, 1)
   }
 
+  /**
+   * Description
+   * @param {ToDos} toUpdate
+   * @returns {Promise<void>}
+   */
+  async updateMyToDos(toUpdate) {
+    const response = await api.put(`api/todos/${toUpdate.id}`, toUpdate)
+    console.log('Updating', response.data)
+    const indexToUpdate = AppState.myToDos.findIndex(todo => todo.id == toUpdate.id)
+    AppState.myToDos.splice(indexToUpdate, 1)
+
+    AppState.myToDos.push(new ToDos(response.data))
+  }
+
 
   createTodo(toDoFormData) {
     const newToDo = new ToDos(toDoFormData)
