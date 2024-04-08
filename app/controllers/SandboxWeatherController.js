@@ -27,10 +27,22 @@ export class SandboxWeatherController {
     }
   }
 
+  async toggleUseCelsius() {
+    const weather = AppState.activeWeather.celsius
+  }
+
+
 
   drawWeather() {
     const activeWeather = AppState.activeWeather
-    setHTML('active-weather', activeWeather.fahrenheit.toFixed(2))
+
+    let useFahrenheit = activeWeather.useFahrenheit //impl
+    if (useFahrenheit) {
+      setHTML('active-weather', activeWeather.fahrenheit.toFixed(2))
+    } else {//c
+      setHTML('active-weather', activeWeather.celsius.toFixed(2))
+    }
+
   }
 
 

@@ -14,6 +14,7 @@ export class SandboxToDoController {
     // AppState.on('myToDos', this.createToDo)
     AppState.on('account', this.getMyToDos)
     AppState.on('myToDos', this.drawToDos)
+    AppState.on('account', this.getMyToDosId)
   }
 
 
@@ -55,8 +56,13 @@ export class SandboxToDoController {
     const toDos = AppState.myToDos
     let toDosContent = ''
     toDos.forEach(toDos => toDosContent += toDos.ToDoListTemplate)
-    setHTML('todos', toDosContent)
+
+    const unfinishedCount = AppState.myToDos.filter(todo => !todo.completed).length;
+    const totalCount = AppState.myToDos.length;
+    setHTML('todos', toDosContent);
+    setHTML('count', `ToDos (${unfinishedCount}/${totalCount})`)
   }
+
 
 
   async getMyToDos() {
@@ -69,6 +75,16 @@ export class SandboxToDoController {
     }
   }
 
+  async getMyToDosId() {
+    try {
+      await sandboxToDoService.getMyToDosId()
+
+    } catch (error) {
+
+      Pop.toast("Could not get your ToDosId", 'error')
+      console.error(error)
+    }
+  }
 
 
   createToDo() {

@@ -24,6 +24,15 @@ class SandboxToDoService {
     console.log(AppState.myToDos);
   }
 
+  async getMyToDosId(toDoId) {
+    const response = await api.get(`api/todos/${this.getMyToDosId}`)
+    console.log('ToDo', response.data);
+    const myToDos = response.data.map(todos => new ToDos(todos))
+    AppState.myToDos = myToDos
+    console.log('🗃️');
+    console.log(AppState.myToDos);
+  }
+
   async deleteToDos(toDoId) {
     const response = await api.delete(`api/todos/${toDoId}`)
     console.log('Deleting', response.data)
